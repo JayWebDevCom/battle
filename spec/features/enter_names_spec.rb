@@ -9,11 +9,15 @@ feature 'Playability' do
   expect(page).to have_content 'Joffrey : 100HP'
   end
 
-  it 'Hit points and confirmation' do
+  it 'players attack' do
     click_link('Attack-Player!')
-    expect(page).to have_content 'Joffrey : 100HP'
-    expect(page).to have_content 'Stannis : 75HP'
     expect(page).to have_content 'Joffrey attacked Stannis'
+  end
+
+  it 'an reduces hit points' do
+    click_link('Attack-Player!')
+    expect(page).to have_content 'Joffrey attacked Stannis'
+    expect(page).to have_content 'Joffrey 100HP Stannis 90HP'
   end
 
 end
