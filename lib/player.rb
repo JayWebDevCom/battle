@@ -12,10 +12,6 @@ class Player
     @hp -= 10
   end
 
-  def attack(player)
-    player.get_hit_muthafucka
-  end
-
   def hit_points
     "#{hp}HP"
   end
