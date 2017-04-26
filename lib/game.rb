@@ -20,6 +20,6 @@ def player_2
 end
 
   def attack(player)
-      player.get_hit_muthafucka
+      player.get_hit
   end
 end

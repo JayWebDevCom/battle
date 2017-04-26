@@ -8,7 +8,7 @@ class Player
     @name = name
   end
 
-  def get_hit_muthafucka
+  def get_hit
     @hp -= 10
   end
 
