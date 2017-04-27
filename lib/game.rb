@@ -2,12 +2,11 @@ class Game
 
   attr_reader :attacking_order
 
-
   def initialize(player_1, player_2)
     @players = [player_1, player_2]
+    @player_1 = player_1
+    @player_2 = player_2
     @attacking_order = @players.reverse
-    # @to_play = @players.last
-    # @attacker = @players.first
   end
 
   def player_1
@@ -23,12 +22,15 @@ class Game
   end
 
   def who_is_up
-    # @to_play == @players.last ? @to_play = @players.first : @to_play = @players.last
     @attacking_order = @attacking_order.reverse
   end
-  #
-  # def attacker
-  #   @attacker == @players.last ? @attacker = @players.first : @attacker = @players.last
-  # end
+
+  def self.playable_game(player_1, player_2)
+    @game = Game.new(player_1, player_2)
+  end
+
+  def self.the_game_instance
+    @game
+  end
 
 end

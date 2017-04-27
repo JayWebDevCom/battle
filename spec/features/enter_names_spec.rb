@@ -28,4 +28,9 @@ feature 'Playability' do
     expect(page).to have_content 'Joffrey 90HP Stannis 90HP'
   end
 
+  it 'shows the winner' do
+    19.times { click_link('Attack-Player!') }
+    expect(page).to have_content 'Joffrey Wins!!!!!'
+  end
+
 end
