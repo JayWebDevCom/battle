@@ -22,8 +22,10 @@ class Battle < Sinatra::Base
   end
 
   get '/attack' do
-  @game = $game
-  @game.attack(@game.player_2)
+    @game = $game
+    @game.who_is_up
+    defend = @game.attacking_order[1]
+    @game.get_attacked(defend)
     erb(:attack)
   end
 

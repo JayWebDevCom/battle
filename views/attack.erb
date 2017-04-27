@@ -1,5 +1,5 @@
-<%= @game.player_1.name %> attacked <%= @game.player_2.name %>
+<%= @game.attacking_order[0].name %> attacked <%= @game.attacking_order[1].name %>
 <br>
-<%= @game.player_1.name %> <%= @game.player_1.hit_points %> <%= @game.player_2.name %> <%= @game.player_2.hit_points %>
+<%= @game.player_1.name %> <%= @game.player_1.hit_points%> <%= @game.player_2.name %> <%= @game.player_2.hit_points%>
 <br>
-<img src="https://media.giphy.com/media/e37RbTLYjfc1q/giphy.gif">
+<a href="/attack">Attack-Player!</a>

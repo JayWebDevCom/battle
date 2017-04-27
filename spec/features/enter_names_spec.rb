@@ -20,4 +20,12 @@ feature 'Playability' do
     expect(page).to have_content 'Joffrey 100HP Stannis 90HP'
   end
 
+  it 'players switch turns' do
+    click_link('Attack-Player!')
+    expect(page).to have_content 'Joffrey attacked Stannis'
+    expect(page).to have_content 'Joffrey 100HP Stannis 90HP'
+    click_link('Attack-Player!')
+    expect(page).to have_content 'Joffrey 90HP Stannis 90HP'
+  end
+
 end
