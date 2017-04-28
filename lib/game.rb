@@ -25,7 +25,7 @@ class Game
     @attacking_order = @attacking_order.reverse
   end
 
-  def self.playable_game(player_1, player_2)
+  def self.create(player_1, player_2)
     @game = Game.new(player_1, player_2)
   end
 
