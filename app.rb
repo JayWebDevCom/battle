@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require './lib/player'
 require './lib/game'
+require './my_helper'
 
 class Battle < Sinatra::Base
 
@@ -25,14 +26,14 @@ class Battle < Sinatra::Base
 
   get '/attack' do
     @game.who_is_up
-    @defender = @game.attacking_order[1]
-    @attacker = @game.attacking_order[0]
+    @attacker, @defender = @game.attacking_order
     @game.get_attacked(@defender)
-    redirect '/winner' if @attacker.hp == 0 || @defender.hp == 0
+    redirect_if_someone_wins
     erb(:attack)
   end
 
   get '/winner' do
+    @attacker, @defender = @game.attacking_order
     erb(:winner)
   end
 
