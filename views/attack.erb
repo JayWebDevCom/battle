@@ -1,8 +1,9 @@
-<%= @game.attacking_order[0].name %> attacked <%= @game.attacking_order[1].name %>
+<%= @attacker.name %> attacked <%= @defender.name %>
+
 <br>
+
 <%= @game.player_1.name %> <%= @game.player_1.hit_points%> <%= @game.player_2.name %> <%= @game.player_2.hit_points%>
+
 <br>
-
-
 
 <a href="/attack">Attack-Player!</a>
